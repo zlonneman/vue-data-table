@@ -331,7 +331,11 @@ methods: {
     this.pageSize = pageSize;
   },
   updatePageNumber($event){
-    this.currentPage = $event.target.value;
+    if($event.target.value > 0 && $event.target.value <= this.pageCount){
+      this.currentPage = $event.target.value;
+    } else {
+      $event.target.value = this.currentPage;
+    }
   },
   firstPage(){
     this.currentPage = 1;
@@ -584,7 +588,7 @@ computed: {
     return sortedDataSource.slice(startingNumber, endingNumber)
   },
   pageCount(){
-    return Math.ceil(this.dataSource.length / this.pageSize)
+    return Math.ceil(this.sortedDataSource.length / this.pageSize)
   }
 },
 mounted(){
