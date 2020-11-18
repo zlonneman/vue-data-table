@@ -1,0 +1,26 @@
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+.card {
+  &-header {
+    background-color: transparent !important; //these overrides were not working w/o adding the important flag
+    border-bottom: none !important;
+    padding-bottom: 5px;
+  }
+  &-title {
+    margin-bottom: -0.5rem;
+  }
+  &-body {
+    padding-top: 5px;
+  }
+}
+
+.highlightAutocomplete{
+  background: $brand-green;
+  color: white;
+}
+.pointer {
+  cursor: pointer;
+}
+.data-cell--input{
+  min-width: 0px !important;
+}

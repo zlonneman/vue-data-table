@@ -1,0 +1,105 @@
+// This is imported globally via the vue.config.js file, so we dont have to import into all our components
+
+//// Override / set color variables
+$white: #fff;
+$black: #000;
+$red: #da1a32;
+$green: #009A41;
+$yellow: #ffc107;
+
+
+$black-050: rgb(250,250,250);
+
+// Brand Colors
+
+$brand-grey-1: #707070;
+$brand-grey-2: #E2E2E2;
+$brand-grey-3: rgb(148, 148, 148);
+$brand-grey-4: #adadad;
+$brand-grey: $brand-grey-1;
+$brand-red:  #C80000;
+$brand-green: #00472C;
+$brand-green-light: rgba(0, 71, 44, 0.4);
+$brand-green-extra-light: rgba(0, 71, 44, 0.15);
+$brand-blue: #0044B2;   
+$brand-blue-light: rgba(0, 68, 178, 0.63);
+$brand-blue-extra-light: rgba(0, 68, 178, 0.397);
+$brand-brown: #BE6D1C;
+$brand-brown-bg: #ECE8E3;
+$brand-brown-bg-dark: darken($brand-brown-bg, 3%);
+$brand-brown-bg-light: lighten($brand-brown-bg, 5%);
+$yellow-highlight: lighten($yellow, 25%);
+$input-border-color: lighten($brand-grey-1, 15%);
+$input-placeholder-color: lighten($brand-grey-1, 10%);
+$input-focus-border-color: lighten($brand-grey-1, 10%);
+$box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.05), 0 1px 6px 0 rgba(0, 0, 0, 0.05);
+
+// Set brand colors
+$primary: $brand-green;
+$secondary: $brand-grey-3;
+$success: $green;
+$error: $brand-red;
+$warning: $yellow;
+
+// Override fonts
+// $font-family-sans-serif: 'Helvetica', serif;
+// // $font-family-serif: Georgia, 'Times New Roman', Times, serif;
+// $font-family-monospace: Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+// $font-family-base: $font-family-sans-serif;
+// $font-weight-base: 300;
+$font-family-sans-serif: 'Roboto', sans-serif;
+$font-family-serif: Georgia, 'Times New Roman', Times, serif;
+$font-family-monospace: Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+$font-family-base: $font-family-sans-serif;
+$font-family-secondary: 'Open Sans', sans-serif;
+$font-weight-base: 300;
+
+// Checkboxes
+$custom-control-indicator-active-color: $primary;
+$custom-control-indicator-active-border-color: $primary;
+$custom-control-indicator-checked-color: $white;
+
+$custom-control-indicator-focus-box-shadow: 0.5px 0.5px 0.5px 1px lighten($brand-grey, 10%);
+$custom-control-indicator-focus-border-color: none;
+
+$custom-control-indicator-border-color: $brand-grey;
+$custom-control-indicator-checked-border-color: $brand-grey;
+
+// Dropdown
+$dropdown-border-width: 0px;
+$dropdown-border-color: transparent;
+$dropdown-border-radius: 0px;
+$dropdown-box-shadow: $box-shadow;
+// Input
+
+$input-bg: $brand-brown-bg-light;
+
+// select input
+$custom-select-focus-box-shadow: none;
+$custom-select-border-radius: 2px;
+$custom-select-border-color: lighten($brand-grey-1, 15%);
+$custom-select-focus-border-color: lighten($brand-grey-1, 10%);
+
+// Card
+$card-bg: $brand-brown-bg-dark;
+
+// hr
+$hr-border-color: $brand-blue;
+
+//Header
+$headings-color: $brand-blue;
+$headings-font-family: $font-family-secondary;
+
+//Label
+$label-margin-bottom: 0px;
+
+//Placeholder
+$input-placeholder-color:  $brand-grey-4;
+
+// vue-select   more scss variables can be found in node_modules/vue-select/src/scss/global/_variables.scss
+$vs-colors: (
+        lightest: $input-border-color,
+        light: #707070,
+        dark: #333,
+        darkest: rgba(0, 0, 0, .15),
+);
