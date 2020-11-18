@@ -307,7 +307,6 @@ methods: {
   //   this.columnDisplaySearchValues[index] = value;
   // },
   updateColumnSearchValue(value, index){
-    console.log('updateColumnSearchValue', value, index)
     this.columnDisplaySearchValues[index] = value;
     this.loading = true;
     this.debounceColumnSearch(() => {
@@ -491,7 +490,14 @@ methods: {
     return styles;
   },
   getSummaryData(header){
-    let data = this.summaryType.toLowerCase() === 'page' ? this.computedDataSource : this.dataSource;
+    let data;
+    if (this.summaryType.toLowerCase() === 'page'){
+      data = this.computedDataSource;
+    } else if(this.summaryType.toLowerCase() === 'all filtered'){
+      data = this.sortedDataSource
+    } else {
+      data = this.dataSource;
+    }
     let arrayOfColumnValues = data.map((row) => {
       return row[header.value]  
     })
@@ -508,11 +514,9 @@ methods: {
 },
 computed: {
   columnSearchFilteredDataSource(){
-    console.log('in filter')
     if(!this.searchColumnFilterUpdateKey) return this.dataSource;
     let filteredDataSource = this.dataSource;
     this.columnSearchFilters.forEach((searchFilter,index) => {
-      console.log('search filter', searchFilter)
       if(!searchFilter) return filteredDataSource
       filteredDataSource = filteredDataSource.filter(row => {
         let rowIncludesInstanceOfSearchFilter = false;
@@ -536,7 +540,6 @@ computed: {
     return filteredDataSource;
   },
   searchFilteredDataSource(){
-    console.log('in filter search', this.columnSearchFilteredDataSource)
     if(!this.searchFilter) return this.columnSearchFilteredDataSource;
     let filteredDataSource = this.columnSearchFilteredDataSource.filter(row => {
       let rowIncludesInstanceOfSearchFilter = false;
@@ -721,6 +724,7 @@ created(){
     .pagination{
       display: flex;
       justify-content: space-between;
+      align-items: center;
       margin: 2px;
       .btn{
         margin: 5px;
@@ -748,12 +752,13 @@ created(){
         }
         .page-nav{
           display: flex;
+          padding: 5px;
           // .btn{
           //   margin: 0px 2px;
           // }
           .current-page-input{
             max-width: 40px;
-            margin: 10px 0px;
+            // margin: 10px 0px;
             text-align: right;
             border-color: rgb(178, 178, 178);
             background-color: lighten(rgb(178, 178, 178), 35)

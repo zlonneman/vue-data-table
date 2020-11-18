@@ -6,7 +6,7 @@
         crossorigin="anonymous">
     <div  class='data-cell' :style="actionStyleObject">
       <div v-for="(action, index) in actions" :key="'action-' + index" @click="handleIconClick(action.emitFunction)" class="action-icon" :style="action.style">
-        <i :class="'fa ' + action.icon" :title="action.title" aria-hidden="true"></i>
+        <i :class="action.icon" :title="action.title" aria-hidden="true"></i>
       </div>
     </div>
   </div>

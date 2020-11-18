@@ -1,6 +1,6 @@
 {
   "name": "@zlonneman/vue-data-table",
-  "version": "1.0.36",
+  "version": "1.0.39",
   "description": "Data table with customizable features including inline editing, summary data, pagination.",
   "main": "dist/index.js",
   "module": "dist/data-table.esm.js",
@@ -35,7 +35,8 @@
   "keywords": [
     "data-table",
     "data-grid",
-    "grid"
+    "grid",
+    "vue"
   ],
   "files": [
     "dist/*",

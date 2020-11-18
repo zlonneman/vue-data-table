@@ -6,6 +6,8 @@
       :inlineEditing="true" 
       :actions="actions"
       :enable-pagination="true"
+      :column-search-filter="true"
+      summaryType="page"
       summaryBackgroundColor='lightgrey'
       headerBackgroundColor='lightgrey'
       cellColor='black'
@@ -31,7 +33,7 @@ export default {
         {text: '', width: '75px', align: 'center', type:'actions'}],
       dataSource: [],
       actions: [{
-        icon: 'fa-trash',
+        icon: 'fa fa-trash',
         title: 'delete',
         style: {cursor: 'pointer'},
         emitFunction: this.deleteRow
